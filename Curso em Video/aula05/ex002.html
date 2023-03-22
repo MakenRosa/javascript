@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Usando variáveis</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <button onclick="clicar()">Click me!</button>
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        var n1 = Number(window.prompt('Digite um número:'))
+        var n2 = Number(window.prompt('Digite outro número:'))
+        function clicar() {
+            window.document.querySelector('h1').innerHTML = `Olá, ${nome}!`
+            window.document.querySelector('p').innerHTML = `A soma entre ${n1} e ${n2} é igual a ${n1 + n2}`
+        }
+    </script>
+</body>
+</html>

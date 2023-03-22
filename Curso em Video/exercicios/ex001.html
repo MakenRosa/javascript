@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia</title>
+    <style>
+        body {
+            position: relative;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .dia {
+            color: #000;
+            background: #ffffff;
+            padding: 0px 60px 60px 60px;
+            width: 500px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .hora {
+            font-size: 2rem;
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hora do Dia</h1>
+    <div class="dia">
+        <p class="hora"></p>
+    </div>
+    <script>
+        var hora = new Date().getHours()
+        if (hora < 12) {
+            document.querySelector('p').innerHTML = `Agora são ${hora} horas, Bom dia!`
+            document.querySelector('body').style.background = 'yellow'
+            document.querySelector('.dia').innerHTML += `<img src="https://images.pexels.com/photos/3071756/pexels-photo-3071756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagem de dia">`
+        } else if (hora < 18) {
+            document.querySelector('p').innerHTML = `Agora são ${hora} horas, Boa tarde!`
+            document.querySelector('body').style.background = 'orange'
+            document.querySelector('.dia').innerHTML += `<img src="https://images.pexels.com/photos/848573/pexels-photo-848573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagem de tarde">`
+        } else {
+            document.querySelector('.hora').innerHTML = `Agora são ${hora} horas, Boa noite!`
+            document.querySelector('body').style.background = 'blue'
+            document.querySelector('.dia').innerHTML += `<img src="https://images.pexels.com/photos/2389476/pexels-photo-2389476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagem de noite">`
+        }
+    </script>
+</body>
+</html>

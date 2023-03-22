@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+            background: #0f0233;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .idade {
+            position: relative;
+            color: #000;
+            background: #ffffff;
+            padding: 0px 60px 60px 60px;
+            width: 500px;
+            height:200px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .idade label{
+            display: inline-flex;
+            align-items: left;
+            justify-content: left;
+            padding:  20px 10px;
+        }
+
+        input#idade{
+            position:absolute;
+            left: 220px;
+            top: 20px;
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        input#sexo{
+            position:absolute;
+            left: 220px;
+            top: 60px;
+        }
+
+        button{
+            background: #0f0233;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 100px;
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <div class="idade">
+        <label for="idade">Ano de Nascimento: </label> 
+        <input type="number" name="idade" id="idade">
+        <label for="sexo">Sexo: </label>
+        <input type="radio" name="sexo" id="sexo" value="M">Masculino
+        <input type="radio" name="sexo" id="sexo" value="F">Feminino
+        <button onclick="verificar()">Verificar</button>
+        <p id="res"></p>
+        <img src="" alt="">
+    </div>
+    <script>
+        function verificar() {
+            var idade = new Date().getFullYear() - document.querySelector('input#idade').value
+            var sexo = document.querySelector('input#sexo').value
+            var res = document.querySelector('p#res')
+            document.querySelector('.idade').style.height = '400px'
+            if (sexo == 'M') {
+                if (idade <= 12){
+                    res.innerHTML = `Você tem ${idade} anos, é um menino`
+                    foto = "https://images.pexels.com/photos/2911970/pexels-photo-2911970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else if (idade <= 18) {
+                    res.innerHTML = `Você tem ${idade} anos, é um adolescente`
+                    foto = "https://images.pexels.com/photos/940585/pexels-photo-940585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else if (idade <= 60) {
+                    res.innerHTML = `Você tem ${idade} anos, é um adulto`
+                    foto = "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else {
+                    res.innerHTML = `Você tem ${idade} anos, é um idoso`
+                    foto = "https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                }
+            } else {
+                if (idade <= 12){
+                    res.innerHTML = `Você tem ${idade} anos, é uma menina`
+                    foto = "https://images.pexels.com/photos/767990/pexels-photo-767990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else if (idade <= 18) {
+                    res.innerHTML = `Você tem ${idade} anos, é uma adolescente`
+                    foto = "https://images.pexels.com/photos/15130065/pexels-photo-15130065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else if (idade <= 60) {
+                    res.innerHTML = `Você tem ${idade} anos, é uma adulta`
+                    foto = "https://images.pexels.com/photos/3435323/pexels-photo-3435323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                } else {
+                    res.innerHTML = `Você tem ${idade} anos, é uma idosa`
+                    foto = "https://images.pexels.com/photos/9639666/pexels-photo-9639666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                }
+            }
+            document.querySelector('img').src = foto
+        }
+    </script>
+</body>
+</html>
