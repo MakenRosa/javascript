@@ -1,0 +1,11 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgba(232, 77, 15, 0.514);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.253);
+    height: 60px;
+    font: bold 25px 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}

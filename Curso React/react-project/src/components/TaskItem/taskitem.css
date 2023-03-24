@@ -1,0 +1,33 @@
+.task-item {
+    background-color: rgba(0, 0, 0, 0.589);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 8px;
+    width: 90%;
+    padding: 8px 16px 8px 16px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .task-item input[type="text"] {
+    border: none;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+  }
+  
+  .task-item select {
+    display: block;
+    width: 80%;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.589);
+    color: #ffffff;
+  }
+  
