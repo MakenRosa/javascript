@@ -1,15 +1,26 @@
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import OutraLista from './components/OutraLista';
-
+import Home from './pages/Home';
+import Empresa from './pages/Empresa';
+import Contato from './pages/Contato';
+import Navbar from './layout/Navbar';
+import Footer from './layout/Footer';
 
 
 function App() {
-  const meusItens = ['React', 'Angular', 'Vue', 'Svelte'];
+
   return (
-    <div className="App">
-      <OutraLista itens={meusItens} />
-      <OutraLista itens={[]} />
-      </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/empresa" element={<Empresa />} />
+        <Route path="/contato" element={<Contato />} />
+      </Routes>
+      <Footer />
+    </Router>
+
   );
 }
 
