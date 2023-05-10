@@ -1,0 +1,50 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#btn {
+  background-color: #353535;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background-color: #bebebe;
+  color: #353535;
+}
+
+#btn:active {
+  background-color: #cccccc;
+  color: #353535;
+}
+
+#container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  background-color: #353535;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.6rem;
+  opacity: 0;
+  transition: 200ms ease-in;
+  position: relative;
+}
+
+#container.visible {
+  opacity: 1;
+}
+
+#container.hidden{
+  opacity: 0;
+}
+
+#arrow {
+  position: absolute;
+}
